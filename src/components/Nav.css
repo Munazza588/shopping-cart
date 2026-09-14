@@ -1,0 +1,19 @@
+div p, div a  {
+    color: pink;
+}
+
+div p {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.nav-div {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+
+.links-div {
+    display: flex;
+    gap: 24px;
+}

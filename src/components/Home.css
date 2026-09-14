@@ -1,0 +1,20 @@
+.shape{
+    background-color: pink;
+    width:300px;
+    height:600px;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    transform: rotate(-0.2rad);
+}
+
+.para-text {
+    color: white;
+    font-size: 10px;
+    padding-top: 50px;
+}
+
+h1{
+    color:white;
+    font-size: 60px;
+    padding-top: 100px;
+}

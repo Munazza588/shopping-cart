@@ -1,0 +1,20 @@
+.title {
+    color:black;
+    margin-bottom: 30px;
+}
+
+.items-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:20px;
+}
+
+.items-div img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+}
+
+.items-div p {
+    color:black;
+}
