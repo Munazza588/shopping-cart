@@ -1,4 +1,4 @@
-import Nav from './nav';
+
 import { useState, useEffect } from "react";
 import './Shop.css';
 import Card from './Card';
@@ -23,17 +23,16 @@ import Card from './Card';
         }, []);
         return { prodInfo, error, loading };
         };
-    function Shop() {
+    function Shop({amount,setAmount,addToCart}) {
     const { prodInfo, error, loading } = useProdInfo();
     if (loading) return <p>Loading...</p>;
     if (error) return <p>A network error was encountered</p>;
     return(
         <div>
-            <Nav/>
             <p className='title'>Shop Products</p>
             <div className='items-div'>
                 {prodInfo.map((prod) => (
-                <Card key={prod.id} title={prod.title} url={prod.image} price={prod.price} />
+                <Card key={prod.id} title={prod.title} url={prod.image} price={prod.price} addToCart={addToCart} amount={amount} setAmount={setAmount} />
                 ))}
             </div>
         </div>

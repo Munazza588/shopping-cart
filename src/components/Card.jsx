@@ -1,23 +1,29 @@
 import './Card.css';
 import { useState } from 'react';
-function Card({title,url,price}) {
-    const [amount,setAmount] = useState(0);
-
+function Card({title,url,price,amount,setAmount,addToCart}) {
+    const [quantity, setQuantity] = useState(1);
 
     function handleAddButton() {
-        setAmount(amount +1);
+        setQuantity(quantity +1);
 
     }
 
     function handleSubButton() {
-        if (amount > 0) {
-            setAmount(amount -1);
+        if (quantity > 0) {
+            setQuantity(quantity -1);
         }
 
     }
 
     function handleInputBoxAmount(e) {
-        setAmount(Number(e.target.value));
+        const value = Number(e.target.value);
+        setQuantity(value < 1 ? 1 : value);
+    }
+
+    
+    function handleAddToCartButton() {
+        setAmount(prev => prev + quantity);
+        addToCart({ title, url, price, quantity });
     }
 
     return (
@@ -30,10 +36,10 @@ function Card({title,url,price}) {
             <div className='button-set-div'>
                 <div className='add-items-div'>
                 <button onClick={handleSubButton} className='button-minus'>-</button>
-                <input type="number" value ={amount}  onChange={handleInputBoxAmount}  min="1" className='input-box'/>
+                <input type="number" value ={quantity}  onChange={handleInputBoxAmount} onFocus={(e) => e.target.select()}  min="1" className='input-box'/>
                 <button onClick={handleAddButton} className='button-plus'>+</button>
                 </div>
-                <button className='add-to-cart-button'>Add to Cart</button>
+                <button onClick={handleAddToCartButton} className='add-to-cart-button'>Add to Cart</button>
             </div>
         </div>
     )

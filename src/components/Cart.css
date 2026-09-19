@@ -1,0 +1,35 @@
+.title  {
+    color:pink;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.empty-cart-info{
+    margin-top: 100px;
+}
+
+.cart-outer-div{
+    display: grid;
+    grid-template-columns:  1fr 2fr;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 500px;
+}
+
+.items-detail-div {
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+.total-div p {
+    padding-bottom: 15px;
+}
+
+.total-div {
+ margin-top: 50px;
+}
